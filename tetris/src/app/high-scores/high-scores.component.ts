@@ -20,7 +20,8 @@ export class HighScoresComponent implements OnInit {
     public highScores: IHighScore[] = [];
     public playerName: string = '';
     public playerScore: number = 0;
-    public intervalId: any = 0;
+    // public intervalId: any = 0;
+    public timeoutId: any = 0;
 
     public sortAsc: boolean = false;
     public applyFilterName = false;
@@ -52,15 +53,22 @@ export class HighScoresComponent implements OnInit {
 
         this.getHighScoresFromServer();
 
-        this.intervalId = setInterval(() => {
-            console.log('refreshing high scores list');
+        this.timeoutId = setTimeout(() => {
             this.getHighScoresFromServer();
-        }, 30000);
+        }, 5000);
+
+        // this.intervalId = setInterval(() => {
+        //     console.log('refreshing high scores list');
+        //     this.getHighScoresFromServer();
+        // }, 30000);
     }
 
     ngOnDestroy() {
-        if (this.intervalId !== 0) {
-            clearInterval(this.intervalId);
+        if (this.timeoutId !== 0) {
+            clearInterval(this.timeoutId);
         }
+        // if (this.intervalId !== 0) {
+        //     clearInterval(this.intervalId);
+        // }
     }
 }
