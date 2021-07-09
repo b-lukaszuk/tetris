@@ -14,7 +14,7 @@ import {
 export class PlayerDataService {
     constructor(private _http: HttpClient) { }
 
-    private _checkTokenUrl: string = 'http://tetris.chrum.it/check-token';
+    private _checkTokenUrl: string = 'https://tetris.chrum.it/check-token';
     private _headersForTokenAuth: HttpHeaders = new HttpHeaders({
         'Accept': 'application/json',
         'Content-Type': 'application/json',

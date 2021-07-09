@@ -8,7 +8,7 @@ import { IHighScore } from '../interfaces/highScore';
     providedIn: 'root',
 })
 export class HighScoresService {
-    private _scoresUrl: string = 'http://tetris.chrum.it/scores';
+    private _scoresUrl: string = 'https://tetris.chrum.it/scores';
     private _headersForScores: HttpHeaders = new HttpHeaders({
         'Accept': 'application/json',
         'Content-Type': 'application/json',
