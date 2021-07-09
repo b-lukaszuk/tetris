@@ -54,6 +54,7 @@ export class GamePageComponent implements OnInit {
     //////////////
     public exitGameButton() {
         this.resetGame();
+        this._playerDataService.setPlayerData("", "", 0);
     }
 
     public startGame() {
