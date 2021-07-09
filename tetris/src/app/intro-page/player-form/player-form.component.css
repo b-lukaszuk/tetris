@@ -1,0 +1,112 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+}
+
+.normal {
+  background: lightblue;
+  padding: 0.2em;
+}
+
+.high-contrast {
+  background: gray;
+  padding: 0.2em;
+}
+
+.centered-div {
+  text-align: center;
+}
+
+legend {
+  font-size: 1.4em;
+}
+
+input[type="text"] {
+  height: 1.8em;
+  font-size: 1.1em;
+}
+
+input[type="text"]:focus {
+  border: solid;
+  border-width: 0.2em;
+  border-color: #3584e4;
+  box-shadow: 0.2em #3584e4;
+  transform: scale(1.025);
+}
+
+input[type="text"]:invalid {
+  border-left: 0.5em solid #ffbeab;
+}
+
+input[type="text"]:valid {
+  border-left: 0.5em solid #c9fec9;
+}
+
+input[type="password"] {
+  height: 1.8em;
+  font-size: 1.1em;
+}
+
+input[type="password"]:focus {
+  border: solid;
+  border-width: 0.2em;
+  border-color: #3584e4;
+  box-shadow: 0.2em #3584e4;
+  transform: scale(1.025);
+}
+
+input[type="password"]:invalid {
+  border-left: 0.5em solid #ffbeab;
+}
+
+input[type="password"]:valid {
+  border-left: 0.5em solid #c9fec9;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+button {
+  border: black 0.1em solid;
+  background-color: #008cba;
+  border-radius: 0.4em;
+  color: white;
+  padding: 0.4em 0.8em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #3566e4;
+}
+
+button:disabled {
+  background-color: lightgray;
+  cursor: not-allowed;
+}
+
+.button-link {
+  background-color: #008cba;
+  border: none;
+  border-radius: 0.4em;
+  color: white;
+  padding: 0.4em 0.8em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.button-link:hover {
+  cursor: pointer;
+}
+
+

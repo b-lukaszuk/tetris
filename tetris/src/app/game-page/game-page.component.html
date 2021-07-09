@@ -1,0 +1,99 @@
+<div>
+  <table>
+    <tr>
+      <td>
+        <player-info> </player-info>
+        <a
+          routerLink="/introPage"
+          routerLinkActive="active"
+          [ngClass]="{ 'button-link': true }"
+          (click)="exitGameButton()"
+        >
+          Exit the game
+        </a>
+      </td>
+      <td>
+        <tetris-core
+          #game
+          (lineCleared)="onLineCleared()"
+          (gameOver)="onGameOver()"
+          class="{{
+            colorPalette === 'high-contrast' ? 'black-and-white' : ''
+          }}"
+        ></tetris-core>
+      </td>
+      <td>
+        <h3>Score: {{ points }}</h3>
+        <h3>Time: {{ time }}</h3>
+        <h3>Game status: {{ gameStatusDesc }}</h3>
+        <hr />
+        <h3>Main game options:</h3>
+        <button (click)="startGame()">Start</button>
+        &nbsp;
+        <button (click)="stopGame()">Stop</button>
+        &nbsp;
+        <button (click)="resetGame()">Reset</button>
+        <br />
+        <br />
+        <hr />
+        <h3>Navigation panel:</h3>
+        <table>
+          <tr>
+            <td>
+              <button (click)="game.actionLeft()">&#8678;</button>
+            </td>
+            <td>
+              <button (click)="game.actionRotate()">&#10226;</button>
+            </td>
+            <td>
+              <button (click)="game.actionRight()">&#8680;</button>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <button (click)="game.actionDown()">&#8681;</button>
+            </td>
+            <td></td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <span>Sort history by timestamp: </span>
+        <button (click)="toggleSortAZ()">
+          {{ sortAZ ? "Z-A" : "A-Z" }}
+        </button>
+        <br /><br />
+        <label for="historyItems"> Filter history by status: </label>
+        <select name="historyItems" id="historyItems" [(ngModel)]="hItemSelect">
+          <option [ngValue]="hItem" *ngFor="let hItem of allowedHistoryEntries">
+            {{ hItem }}
+          </option>
+        </select>
+        <br />
+        <br />
+        <hr />
+        <h3>Game history:</h3>
+        <ul>
+          <li
+            *ngFor="
+              let hItem of history
+                | historyFilter: hItemSelect
+                | sortHistoryItems: sortAZ;
+              let index = index
+            "
+          >
+            <p>{{ hItem.timestamp }}&nbsp;{{ hItem.actionName }}</p>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <authors-info></authors-info>
+      </td>
+      <td></td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,63 @@
+<div class="main">
+  <a routerLink="/introPage" routerLinkActive="active" class="button-link">
+    Back to main page
+  </a>
+  &nbsp;&nbsp; <br />
+  <br />
+  <h1>{{ sortAsc ? "Bottom" : "Top" }} 10 scores</h1>
+  <div>
+    <input
+      width="2em"
+      height="2em"
+      name="sortAscending"
+      id="sortAscending"
+      type="checkbox"
+      value=""
+      (click)="toggleSortAsc()"
+    />
+    &nbsp; &nbsp;
+    <label for="sortAscending">Sort Ascending</label>
+  </div>
+  <div *ngIf="playerName.trim() !== ''">
+    <span>Your current score: </span>
+    <span>{{ playerName }} - {{ playerScore }} pts</span>
+    <div>
+      <input
+        width="2em"
+        height="2em"
+        name="myScoresOnly"
+        id="myScoresOnly"
+        type="checkbox"
+        value=""
+        (click)="toggleFilterByName()"
+      />
+      &nbsp; &nbsp;
+      <label for="myScoresOnly">Show only my scores</label>
+    </div>
+  </div>
+  <br />
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Score (pts)</th>
+      </tr>
+    </thead>
+    <tbody
+      *ngFor="
+        let highScore of highScores
+          | filterByPlayerName: playerName:applyFilterName
+          | highScoresSort: sortAsc
+          | slice: 0:10;
+        index as rId
+      "
+    >
+      <tr>
+        <th scope="row">{{ rId + 1 }}</th>
+        <td>{{ highScore.name }}</td>
+        <td>{{ highScore.score }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

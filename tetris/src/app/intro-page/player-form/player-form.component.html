@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="centered-div">
+    <form
+      [formGroup]="playerForm"
+      (ngSubmit)="login()"
+      [ngClass]="playerForm.value['colorPalette']"
+    >
+      <h2>Enter Your data below and play tetris</h2>
+      <fieldset>
+        <legend>Player's Name</legend>
+        <input
+          formControlName="playerName"
+          maxLength="18"
+          placeholder="Enter Your Name..."
+          type="text"
+          pattern="^[a-zA-Z ,.'-]{5,}$"
+          required
+        />
+      </fieldset>
+      <fieldset>
+        <legend>Student's ID</legend>
+        <input
+          formControlName="playerId"
+          maxLength="18"
+          placeholder="Enter Your student's ID..."
+          type="password"
+          pattern="^.{4,}$"
+          required
+        />
+      </fieldset>
+      <br />
+      <label for="colorPalettes"> color palette: </label>
+      <select
+        name="colorPalettes"
+        id="colorPalettes"
+        formControlName="colorPalette"
+        (change)="colorOnSelect()"
+      >
+        <option *ngFor="let color of colorPalettes" [ngValue]="color">
+          {{ color }}
+        </option>
+      </select>
+      <br />
+      <br />
+      <button type="submit" [disabled]="!playerForm.valid">
+        I'm Your Huckellberry, and that's just my game!
+      </button>
+    </form>
+    <br />
+    <a routerLink="/highScores" routerLinkActive="active" class="button-link">
+      See High Scores
+    </a>
+  </div>
+</div>

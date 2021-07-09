@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+tetris-core.black-and-white tile {
+  background: white;
+}
+
+/* neccessary, otherwise i can't see game-pieces */
+/* za: https://github.com/chrum/ngx-tetris/blob/master/src/styles.scss */
+/* Ctrl+Shift-I w przegladarce */
+
+tetris-core.black-and-white tile.color-box,
+tetris-core.black-and-white tile.color-dot,
+tetris-core.black-and-white tile.color-l,
+tetris-core.black-and-white tile.color-line,
+tetris-core.black-and-white tile.color-lr,
+tetris-core.black-and-white tile.color-s,
+tetris-core.black-and-white tile.color-t,
+tetris-core.black-and-white tile.color-z {
+  background: black;
+}

@@ -1,0 +1,51 @@
+button {
+  background-color: #3584d4;
+  border: none;
+  color: white;
+  padding: 0.4em 0.8em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 0.4em;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #3584ff;
+}
+
+table > tr > td {
+  vertical-align: top;
+  padding: 1em;
+  width: 25%;
+}
+
+table > tr > td > table > tr > td {
+  vertical-align: top;
+  padding: 0.5em;
+}
+
+.button-link {
+  background-color: #008cba;
+  border: none;
+  border-radius: 0.4em;
+  color: white;
+  padding: 0.4em 0.8em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.button-link:hover {
+  cursor: pointer;
+}
+
+.disabled-link {
+  background-color: lightgray;
+  cursor: auto;
+  pointer-events: none;
+}
