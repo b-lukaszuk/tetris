@@ -1,6 +1,6 @@
 # Tetris
 
-Kopia i deployment: `b-lukaszuk/PB_angular_2020_2021`
+Kopia i deployment: `b-lukaszuk/PB_angular_2020_2021` <br>
 **Deployed version ->** [Here](https://b-lukaszuk.github.io/tetris/)
 
 ---
